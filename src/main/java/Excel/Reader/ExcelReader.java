@@ -45,6 +45,11 @@ public class ExcelReader
 		return row.getPhysicalNumberOfCells();
 	}
 
+	private int  headerColumncount() {
+		return this.sheet.getRow(0).getPhysicalNumberOfCells();
+		
+		
+	}
 	public String GetCellData(int Row, int Column) {
 
 
@@ -65,8 +70,14 @@ public class ExcelReader
 		Map<Integer,String> RowData = new HashMap();
 		this.row = sheet.getRow(Row);
 
-		for(Cell cell : this.row) {
+		/*for(Cell cell : this.row) {
 			RowData.put(cell.getColumnIndex(), FormatCell(cell));
+		}*/
+		
+		for(int c = 1;c<headerColumncount();c++) {
+			Cell cell = this.row.getCell(c-1);
+			     RowData.put(c-1, FormatCell(cell));
+			
 		}
 		return RowData;
 	}

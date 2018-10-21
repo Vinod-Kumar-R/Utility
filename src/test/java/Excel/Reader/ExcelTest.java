@@ -23,7 +23,7 @@ public class ExcelTest
 		try {
 			ExcelReader er = new ExcelReader("D:\\Vinod\\ExcelTest.xlsx");
 			System.out.println(er.Rowcout(0));
-			System.out.println(er.ColumnCout(3));
+			System.out.println(er.ColumnCout(0));
 			
 			/*for(int i = 0;i<er.Rowcout(0);i++) {
 				for(int j= 0;j<er.ColumnCout(i);j++) {
